@@ -72,3 +72,5 @@ describe 'line counter', ->
 
   it 'a line containing nothing by whitespace should be replaced by a blank line', ->
     removeWhitespace("  \t  \n \nb").should.equal "b"
+
+# remove block quotes, remove empty lines, remove blank lines, count what's left

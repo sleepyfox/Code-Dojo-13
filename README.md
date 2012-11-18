@@ -4,11 +4,11 @@ This is my worked example from the 13th meeting of the London Code Dojo in early
 
     mocha --compilers coffee:coffee-script test-*.coffee
 
-You can nstall dependencies automatically with:
+You can install dependencies automatically with:
 
     npm install
 
-I set up a watchr file (kata.watchr) so that the tests are run automatically every time you save a file in your editor, simply run watchr (if you have it installed) with:
+I set up a watchr file (loc.watchr) so that the tests are run automatically every time you save a file in your editor, simply run watchr (if you have it installed) with:
     
     watchr loc.watchr
 
