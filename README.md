@@ -12,7 +12,7 @@ I set up a watchr file (loc.watchr) so that the tests are run automatically ever
 
     watchr loc.watchr
 
-The source of the kata is the LOC kata, which I first used in London Code Dojo 4.
+The source of the kata is the LOC kata, which I first used in London Code Dojo 4, which came from the Pragmatic Programmers and you can find the original write up [here](http://codekata.com/kata/kata13-counting-code-lines/).
 
 I've also linked the [slides](https://speakerdeck.com/sleepyfox/code-dojo-13-nov-2012) from the meeting. You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
