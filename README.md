@@ -2,14 +2,14 @@ Code Dojo 13
 ============
 This is my worked example from the 13th meeting of the London Code Dojo in early Nov 2012. Feel free to play around with it. You can run the code (assuming you have node, coffeescript, mocha and chai installed) with:
 
-    mocha --compilers coffee:coffee-script test-*.coffee
+    npm test
 
 You can install dependencies automatically with:
 
     npm install
 
-I set up a watchr file (loc.watchr) so that the tests are run automatically every time you save a file in your editor, simply run watchr (if you have it installed) with:
-    
+I set up a watchr file (loc.watchr) so that the tests are run automatically every time you save a file in your editor, simply run watchr (if installed) with:
+
     watchr loc.watchr
 
 The source of the kata is the LOC kata, which I first used in London Code Dojo 4.
