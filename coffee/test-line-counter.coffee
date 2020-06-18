@@ -10,13 +10,13 @@ isLine = (string) ->
   if regexp.test(string) then return false
   return true
 
-removeBlock = (string) -> 
+removeBlock = (string) ->
   BLOCK_QUOTE = /\/\*(.|\n)*\*\//gm
   string.replace BLOCK_QUOTE, "\n"
 
 linesOfCode = (string) ->
   string = removeBlock string
-  array = string.split "\n" 
+  array = string.split "\n"
   lines = 0
   for line in array
     if isLine line

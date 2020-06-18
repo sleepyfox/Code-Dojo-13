@@ -1,19 +1,15 @@
 Code Dojo 13
 ============
-This is my worked example from the 13th meeting of the London Code Dojo in early Nov 2012. Feel free to play around with it. You can run the code (assuming you have node, coffeescript, mocha and chai installed) with:
+This git repository contains code related to the 13th meeting of the London Code Dojo in early Nov 2012. Feel free to play around with it.
 
-    npm test
+The source of the kata is the LOC kata, which I first used in London Code Dojo 4, 
 
-You can install dependencies automatically with:
+The objective is to create a program that will take a Java code file and count the number of Lines Of Code (LOC). This is not quite as easy as `wc -l` because blank lines must be skipped over, as must comments. Comments can be single-line, multiple-line or javadoc comments.
 
-    npm install
+If there is time, then some form of parsing for LLOC (Logical Lines Of Code) should also be attempted, where we cater for splitting a line of code across multiple physical lines, or even multiple statements on a single line.
 
-I set up a watchr file (loc.watchr) so that the tests are run automatically every time you save a file in your editor, simply run watchr (if installed) with:
+You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
-    watchr loc.watchr
-
-The source of the kata is the LOC kata, which I first used in London Code Dojo 4, which came from the Pragmatic Programmers and you can find the original write up [here](http://codekata.com/kata/kata13-counting-code-lines/).
-
-I've also linked the [slides](https://speakerdeck.com/sleepyfox/code-dojo-13-nov-2012) from the meeting. You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
+The origin of this kata is from the Pragmatic Programmers, [here](http://codekata.com/kata/kata13-counting-code-lines/).
 
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license - see [http://creativecommons.org/licenses/by-nc-sa/3.0/](http://creativecommons.org/licenses/by-nc-sa/3.0/)
