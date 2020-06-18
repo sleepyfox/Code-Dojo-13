@@ -6,8 +6,6 @@ The source of the kata is the LOC kata, which I first used in London Code Dojo 4
 
 The objective is to create a program that will take a Java code file and count the number of Lines Of Code (LOC). This is not quite as easy as `wc -l` because blank lines must be skipped over, as must comments. Comments can be single-line, multiple-line or javadoc comments.
 
-If there is time, then some form of parsing for LLOC (Logical Lines Of Code) should also be attempted, where we cater for splitting a line of code across multiple physical lines, or even multiple statements on a single line.
-
 You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
 The origin of this kata is from the Pragmatic Programmers, [here](http://codekata.com/kata/kata13-counting-code-lines/).
