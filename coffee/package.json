@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "chai": "4.x",
-    "mocha": "8.x"
+    "mocha": "^8.2.0"
   },
   "scripts": {
     "test": "mocha --require coffeescript/register test-*.coffee"

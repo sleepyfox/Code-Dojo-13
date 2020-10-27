@@ -36,3 +36,4 @@ nbproject
 node_modules
 
 server.log
+package-lock.json
