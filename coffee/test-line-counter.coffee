@@ -6,6 +6,7 @@ threeLines = fs.readFileSync('./3-lines.java', 'utf8')
 fiveLines = fs.readFileSync('./5-lines.java', 'utf8')
 
 describe 'line counter', ->
+
   it 'a line containing only whitespace should not count', ->
     loc.isLine(" ").should.equal false
 
@@ -52,7 +53,7 @@ describe 'line counter', ->
   it 'tests perverse case', ->
     loc.linesOfCode("        System./*wait*/out./*for*/println/*it*/(\"Hello/*\");").should.equal 1
 
-  it 'tests 3-line-file', ->
+  xit 'tests 3-line-file', ->
     loc.linesOfCode(threeLines).should.equal 3
 
   xit 'tests 5-line-file', ->
