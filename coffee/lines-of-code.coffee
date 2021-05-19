@@ -1,3 +1,6 @@
+lineEnding = (multilineString) ->
+  if (multilineString.match(/\r\n/)) then '\r\n' else '\n'
+
 isLine = (string) ->
   if string is "" then return false
   if /^\s+$/.test(string) then return false
@@ -5,19 +8,28 @@ isLine = (string) ->
   return true
 
 linesOfCode = (string) ->
-  string = removeWhitespace removeEmptyLines removeBlock string
-  codeArray = string.split "\n"
-  codeArray.filter(isLine).length
+  unblockedString = removeBlock string
+  codeArray = unblockedString.split lineEnding(string)
+  codeArray.map removeWhitespace
+           .filter(isLine)
+           .length
 
 removeBlock = (string) ->
-  BLOCK_QUOTE = /\/\*(.|\n)*\*\//gm
+  BLOCK_QUOTE = /\/\*(.|\r?\n)*\*\//gm
   string.replace BLOCK_QUOTE, ""
 
-removeEmptyLines = (string) ->
-  EMPTY_LINE = /\n[\n]+/g
-  string.replace EMPTY_LINE, "\n"
+isEmptyLine = (string) ->
+  EMPTY_LINE = /^$/
+  !!string.match EMPTY_LINE
 
 removeWhitespace = (string) ->
-  string.replace /^\s*\n/gm, ""
+  string.replace /^\s*/, ""
 
-module.exports = { isLine, linesOfCode, removeBlock, removeEmptyLines, removeWhitespace }
+module.exports = {
+  lineEnding
+  isLine
+  linesOfCode
+  removeBlock
+  isEmptyLine
+  removeWhitespace
+}

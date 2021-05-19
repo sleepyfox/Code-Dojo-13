@@ -6,6 +6,16 @@ threeLines = fs.readFileSync('./3-lines.java', 'utf8')
 fiveLines = fs.readFileSync('./5-lines.java', 'utf8')
 
 describe 'line counter', ->
+  describe 'Line endings', ->
+    it 'should be recognised for Unix files', ->
+      loc.lineEnding('a\nb\n').should.equal '\n'
+
+    it 'should be recognised for Windows files', ->
+      loc.lineEnding('a\r\nb\r\n').should.equal '\r\n'
+
+    it 'should default to Unix-style', ->
+      loc.lineEnding('').should.equal '\n'
+
   describe 'checking a line of code', ->
     it 'a line containing only whitespace should not count', ->
       loc.isLine(" ").should.equal false
@@ -26,22 +36,9 @@ describe 'line counter', ->
     it 'a file containing a block comment should have it removed', ->
       loc.removeBlock("a/*\nb\n*/c").should.equal "ac"
 
-  describe 'Empty lines', ->
-    it 'a file containing two empty lines should have them reduced to one', ->
-      loc.removeEmptyLines("a\n\nb").should.equal "a\nb"
-
-    it 'a file containing three empty lines should have them reduced to one', ->
-      loc.removeEmptyLines("a\n\n\nb").should.equal "a\nb"
-
-    it 'a file containing four empty lines should have them reduced to one', ->
-      loc.removeEmptyLines("a\n\n\n\nb").should.equal "a\nb"
-
-  describe 'Whitespace', ->
-    it 'a line containing nothing by whitespace should be replaced by a blank line', ->
-      loc.removeWhitespace("a\n \nb").should.equal "a\nb"
-
-    it 'leading whitespace should be removed', ->
-      loc.removeWhitespace("  \t  \n \nb").should.equal "b"
+  describe 'Leading whitespace', ->
+    it 'should be removed', ->
+      loc.removeWhitespace("  \t  b").should.equal "b"
 
   describe 'Calculating the number of lines', ->
     it 'a file with 2 lines of code should have two lines', ->
@@ -57,7 +54,7 @@ describe 'line counter', ->
     it 'tests perverse case', ->
       loc.linesOfCode("        System./*wait*/out./*for*/println/*it*/(\"Hello/*\");").should.equal 1
 
-    xit 'tests 3-line-file', ->
+    it 'tests 3-line-file', ->
       loc.linesOfCode(threeLines).should.equal 3
 
     xit 'tests 5-line-file', ->
